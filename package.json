@@ -1,0 +1,32 @@
+{
+    "name": "relationbuilder",
+    "description": "Shell for building database model interdependecies",
+    "version": "0.0.1",
+    "private": true,
+    "homepage": "",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "author": "Chris Olivares <chris@classdojo.com",
+    "main": "./index.js",
+    "scripts": {
+      "watch" : "coffee -c -w  -o lib src"
+    },
+    "directories": {
+        "lib": "."
+    },
+    "dependencies": { 
+        "dojoconstants": "git+ssh://git@github.com:classdojo/dojoconstants.git#HEAD",
+        "mongoose": "3.5.0",
+        "coffee-script": "1.4.0",
+        "underscore": "1.4.2"
+    },
+    "devDependencies": { 
+        "mocha": "1.7.x",
+        "expect.js": "0.2.0"
+    },
+    "engines": {
+        "node": ">=0.6.0"
+    }
+}
