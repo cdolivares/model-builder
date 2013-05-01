@@ -2,7 +2,7 @@
 REPORTER = dot
 
 build:
-	coffee --compile --output lib/ src/
+	@coffee --compile --output lib/ src/
 
 test:
 	./node_modules/.bin/mocha \
