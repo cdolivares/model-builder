@@ -12,10 +12,10 @@ class GraphDirector
 
     Takes a Graph and Builder.
   ###
-  constructor: (graph, builder) ->
-    @_graph = graph
+  constructor: (builder) ->
     @_builder = builder
-    #set graph on builder if getting graph interface is implemented
+    #set graph on builder if graph interface
+    #setting is defined
     if @_builder.setGraph?
       @_builder.setGraph @_graph
 
@@ -24,5 +24,10 @@ class GraphDirector
       @_builder.build (err) =>
         @_builder.postBuild (err) =>
           callback null
+
+  setGraph: (graph) ->
+    graph.setDrivers = @_builder.getResult()
+    graph.setNodeManager = @_builder.
+    return graph
 
 module.exports = GraphDirector
