@@ -13,16 +13,16 @@ class Graph
     @_nodes = []
     @_drivers = {}
 
-  setDrivers: (drivers) =>
-    @_drivers
+  setDrivers: (drivers) ->
+    @_drivers = drivers
 
-  setNodeManager: (nodeManager) =>
-    @_nodes = nodeManager
+  setNodeManager: (nodeManager) ->
+    @_nodeManager = nodeManager
 
   @::__defineGetter__ 'drivers', () ->
-    @_drivers
+    return @_drivers
 
   @::__defineGetter__ 'nodeManager', () ->
-    @_nodeManager
+    return @_nodeManager
 
 module.exports = Graph

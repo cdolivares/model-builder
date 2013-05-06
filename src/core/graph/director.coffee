@@ -26,7 +26,7 @@ class GraphDirector
           callback null
 
   setGraph: (graph) ->
-    graph.setDrivers = @_builder.getResult()
+    graph.setDrivers = @_builder.getDrivers()
     graph.setNodeManager = @_builder.
     return graph
 
