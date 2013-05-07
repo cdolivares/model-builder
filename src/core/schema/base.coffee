@@ -1,52 +1,83 @@
 class Base
 
-  #has_* stores
-  @_r = {}
-  @_r.has = {}
-  @_r.has.many =[]
-  @_r.has.one = []
+  @clone = () ->
+    f = () ->
+    #has_* stores
+    f._r = {}
+    f._r.has = {}
+    f._r.has.many =[]
+    f._r.has.one = []
 
-  #belongs_to_* stores
-  @_r.belongs_to = {}
-  @_r.belongs_to.many = []
-  @_r.belongs_to.one = []
+    #belongs_to_* stores
+    f._r.belongs_to = {}
+    f._r.belongs_to.many = []
+    f._r.belongs_to.one = []
 
-  @_s = {}
+    f._s = {}
 
-  #default root is false
-  @_root = false
+    #default root is false
+    f._root = false
 
-  @name = (name) ->
-    @_name = name
+    f.name = (name) ->
+      f._name = name
 
-  @has_many = (Model) ->
-    @_r.has.many.push Model
+    f.has_many = (Model) ->
+      f._r.has.many.push Model
 
-  @has_one = (Model) ->
-    @_r.has.one.push Model
+    f.has_one = (Model) ->
+      f._r.has.one.push Model
 
-  @belongs_to_many = (Model) ->
-    @_r.belongs_to.many.push Model
+    f.belongs_to_many = (Model) ->
+      f._r.belongs_to.many.push Model
 
-  @belongs_to_one = () ->
-    @_r.belongs_to.one.push Model
+    f.belongs_to_one = (Model) ->
+      f._r.belongs_to.one.push Model
 
-  @type: (type) ->
-    @_type = type
+    f.type = (type) ->
+      f._type = type
 
-  @schema = (obj) ->
-    @_s = obj
+    f.schema = (obj) ->
+      f._s = obj
 
-  @root = (isRoot) ->
-    @_root = isRoot
+    f.root = (isRoot) ->
+      f._root = isRoot
 
-  @_get_r: () ->
-    return @_r
+    ###
+      Method: serialize
 
-  @_get_s: () ->
-    return @_s
+      Serializes the node into a json object.
+      The format is something that an object
+      of class type Node knows how to configure
+      itself from.
+    ###
+    f.serialize = () ->
+      o =
+        type: f._type
+        children:
+          many: f._r.has.many
+          one: f._r.has.one
+        parents:
+          many: f._r.belongs_to.many
+          one: f._r.belongs_to.one
+        meta:
+          root: f._root
+        driver:
+          schema: f.schema
+      return o
 
-  @_get_name: () ->
-    return @_name
+    #create a node from a json object
+    f.deserialize = (obj) ->
+      throw new Error("Not Implemented")
+
+    f._get_r = () ->
+      return f._r
+
+    f._get_s = () ->
+      return f._s
+
+    f._get_name = () ->
+      return f._name
+
+    return f
 
 module.exports = Base
