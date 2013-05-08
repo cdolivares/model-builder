@@ -5,6 +5,9 @@
   defined config file.
 ###
 
+###
+  TODO: Still need to construct node_manager!
+###
 class GraphDirector
 
   ###
@@ -26,8 +29,8 @@ class GraphDirector
           callback null
 
   setGraph: (graph) ->
-    graph.setDrivers = @_builder.getDrivers()
-    graph.setNodeManager = @_builder.
+    graph.setDrivers @_builder.getDrivers()
+    # graph.setNodeManager = @_builder
     return graph
 
 module.exports = GraphDirector

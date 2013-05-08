@@ -11,7 +11,8 @@ EDGE_TYPES =
 ###
   Class: NodeBuilder
 
-  NodeBuilder takes in a schema path and constructs nodes from each of the 
+  NodeBuilder takes in a schema path and constructs Nodes and Edges.
+  Also provides an interface to a builder instance
 ###
 class NodeBuilder
 
@@ -22,6 +23,19 @@ class NodeBuilder
   init: () ->
     @_nodeConfigs = require(@_schemaPath)
     @_build()
+
+  ###
+    Method: each
+
+    Synchronous iteration through each of the nodes.
+  ###
+  each: (callback) ->
+    @_nodes.forEach.call @_nodes, callback
+
+  find: (nodeName) ->
+    _n = _.filter @_nodes, (n) -> 
+      n.name is nodeName
+    return _n[0]
 
   ###
     Crude build method.  Uses naive iteration
