@@ -17,10 +17,6 @@ class GraphDirector
   ###
   constructor: (builder) ->
     @_builder = builder
-    #set graph on builder if graph interface
-    #setting is defined
-    if @_builder.setGraph?
-      @_builder.setGraph @_graph
 
   build: (callback) =>
     @_builder.preBuild (err) =>

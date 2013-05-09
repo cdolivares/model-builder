@@ -62,7 +62,7 @@ class Base
         meta:
           root: f._root
         driver:
-          schema: f.schema
+          schema: f._s.driverFields
       return o
 
     #create a node from a json object

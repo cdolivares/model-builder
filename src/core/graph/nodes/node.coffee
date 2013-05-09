@@ -26,16 +26,16 @@ class Node
   ###
 
   @::__defineGetter__ 'name', () ->
-    @_name
+    return @_name
 
   @::__defineGetter__ 'type', () ->
-    @_config.type
+    return @_config.type
 
   @::__defineGetter__ 'schema', () ->
-    @_config.driver.schema
+    return @_config.driver.schema
 
   @::__defineGetter__ 'isRoot', () ->
-    @_config.meta.root
+    return @_config.meta.root
 
   ###
     .children and .parents return an object
