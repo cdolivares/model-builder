@@ -14,6 +14,7 @@ class Base
     f._r.belongs_to.one = []
 
     f._s = {}
+    f._short = null
 
     #default root is false
     f._root = false
@@ -42,6 +43,9 @@ class Base
     f.root = (isRoot) ->
       f._root = isRoot
 
+    f.short_name = (n) ->
+      f._short = n
+
     ###
       Method: serialize
 
@@ -61,6 +65,7 @@ class Base
           one: f._r.belongs_to.one
         meta:
           root: f._root
+          short_name: f._short
         driver:
           schema: f._s.driverFields
       return o

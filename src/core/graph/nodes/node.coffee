@@ -37,6 +37,9 @@ class Node
   @::__defineGetter__ 'isRoot', () ->
     return @_config.meta.root
 
+  @::__defineGetter__ 'short_name', () ->
+    return @_config.meta.short_name
+
   ###
     .children and .parents return an object
     with
