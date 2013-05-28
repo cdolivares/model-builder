@@ -26,7 +26,6 @@ class GraphDirector
 
   setGraph: (graph) ->
     graph.setDrivers @_builder.getDrivers()
-    # graph.setNodeManager = @_builder
     return graph
 
 module.exports = GraphDirector

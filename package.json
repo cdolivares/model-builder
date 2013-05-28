@@ -1,7 +1,7 @@
 {
     "name": "model-builder",
-    "description": "Shell for building database model interdependecies",
-    "version": "0.0.1",
+    "description": "Shell for building database model dependency graph",
+    "version": "0.0.2",
     "private": true,
     "homepage": "",
     "repository": {

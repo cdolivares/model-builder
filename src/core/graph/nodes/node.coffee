@@ -54,12 +54,12 @@ class Node
     if not @_config.children.one? and not @_config.children.many?
       return null
     else
-      return @_config.children
+      return _.map(@_edges.children, (edge) -> edge.children)
 
   @::__defineGetter__ 'parents', () ->
     if not @_config.parents.one? and not @_config.parents.many?
       return null
     else
-      return @_config.parents
+      return _.map(@_edges.parent, (edge) -> edge.parent)
 
 module.exports = Node
