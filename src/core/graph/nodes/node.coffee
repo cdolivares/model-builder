@@ -21,7 +21,7 @@ class Node
   config: () ->
     console.log "Configuring node...#{@_name}"
 
-  setAlternameName: (name) ->
+  setAlternateName: (name) ->
     @__altName = name
 
   ###
