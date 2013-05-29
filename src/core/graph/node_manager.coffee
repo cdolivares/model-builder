@@ -19,7 +19,7 @@ class NodeManager
 
   find: (nodeName) ->
     _n = _.filter @_nodes, (n) -> 
-      n.name is nodeName
+      _.contains([n.name, n.alternateName], nodeName)
     return _n[0]
 
   @::__defineGetter__ 'nodes', () ->
