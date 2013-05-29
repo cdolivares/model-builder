@@ -21,12 +21,18 @@ class Node
   config: () ->
     console.log "Configuring node...#{@_name}"
 
+  setAlternameName: (name) ->
+    @__altName = name
+
   ###
     Getters
   ###
 
   @::__defineGetter__ 'name', () ->
     return @_name
+
+  @::__defineGetter__ 'alternateName', () ->
+    return @__altName
 
   @::__defineGetter__ 'type', () ->
     return @_config.type
