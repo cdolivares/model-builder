@@ -18,7 +18,7 @@ class NodeManager
     return node.children
 
   find: (nodeName) ->
-    _n = _.filter @_nodes, (n) -> 
+    _n = _.filter @__nodes, (n) ->
       _.contains([n.name, n.alternateName], nodeName)
     return _n[0]
 
