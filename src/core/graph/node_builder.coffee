@@ -52,7 +52,7 @@ class NodeBuilder
       n = new Node(nodeName, nodeDescription.serialize())
       n.config()
       @_nodes.push n
-    #now let's add each nodes edges
+    #now let's add each node's edges
     for node in @_nodes
       #construct each edge by keying off the children
       @_addEdges node
