@@ -5,9 +5,6 @@
   defined config file.
 ###
 
-###
-  TODO: Still need to construct node_manager!
-###
 class GraphDirector
 
   ###
