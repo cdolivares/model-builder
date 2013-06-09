@@ -17,12 +17,10 @@ EDGE_TYPES =
 ###
 class NodeBuilder
 
-  constructor: (schemaPath) ->
-    @_schemaPath = schemaPath
+  constructor: (@_nodeConfigs) ->
     @_nodes = []
 
   init: () ->
-    @_nodeConfigs = require(@_schemaPath)
     @_build()
 
 

@@ -1,7 +1,7 @@
 ###
   Class: NodeManager
 
-  Node Managaer provides an interface for the application to get information about
+  Node Manager provides an interface for the application to get information about
   the resource graph.  This NodeManager should get
 ###
 
