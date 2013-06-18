@@ -49,7 +49,7 @@ class Base
       f._short = n
 
     f.instance_methods = (methods) ->
-      @_instance_methods = methods
+      f._instance_methods = methods
 
     ###
       Method: serialize
