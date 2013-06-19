@@ -19,6 +19,8 @@ class Base
     #default root is false
     f._root = false
 
+    f._instance_methods = {}
+
     f.name = (name) ->
       f._name = name
 
@@ -46,6 +48,9 @@ class Base
     f.short_name = (n) ->
       f._short = n
 
+    f.instance_methods = (methods) ->
+      f._instance_methods = methods
+
     ###
       Method: serialize
 
@@ -68,6 +73,8 @@ class Base
           short_name: f._short
         driver:
           schema: f._s.driverFields
+        methods:
+          instance: f._instance_methods
       return o
 
     #create a node from a json object
