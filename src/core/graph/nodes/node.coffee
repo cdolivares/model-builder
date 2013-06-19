@@ -46,6 +46,9 @@ class Node
   @::__defineGetter__ 'short_name', () ->
     return @_config.meta.short_name
 
+  @::__defineGetter__ 'configuration', () ->
+    @_config
+
   ###
     .children and .parents return an object
     with
