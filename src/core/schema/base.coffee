@@ -55,6 +55,9 @@ class Base
     f.virtuals = (virtuals) ->
       f._virtuals = virtuals
 
+    f.attach = (attachments) ->
+      f._attach = attachments
+
     ###
       Method: serialize
 
@@ -80,6 +83,7 @@ class Base
         methods:
           instance: f._instance_methods
         virtuals: f._virtuals
+        attach: f._attach
       return o
 
     #create a node from a json object
