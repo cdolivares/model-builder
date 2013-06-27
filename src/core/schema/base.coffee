@@ -20,6 +20,7 @@ class Base
     f._root = false
 
     f._instance_methods = {}
+    f._virtuals = {}
 
     f.name = (name) ->
       f._name = name
@@ -51,6 +52,12 @@ class Base
     f.instance_methods = (methods) ->
       f._instance_methods = methods
 
+    f.virtuals = (virtuals) ->
+      f._virtuals = virtuals
+
+    f.attach = (attachments) ->
+      f._attach = attachments
+
     ###
       Method: serialize
 
@@ -75,6 +82,8 @@ class Base
           schema: f._s.driverFields
         methods:
           instance: f._instance_methods
+        virtuals: f._virtuals
+        attach: f._attach
       return o
 
     #create a node from a json object
