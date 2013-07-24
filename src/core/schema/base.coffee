@@ -61,7 +61,7 @@ class Base
       f._attach = attachments
 
     f.featureFlags = (featureFlags) ->
-      f._featureFlags = _.filter(featureFlags.split(','), (e) -> e.trim())
+      f._featureFlags = featureFlags
 
     ###
       Method: serialize
