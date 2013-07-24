@@ -1,3 +1,5 @@
+_ = require("underscore")
+
 class Base
 
   @clone = () ->
@@ -59,7 +61,7 @@ class Base
       f._attach = attachments
 
     f.featureFlags = (featureFlags) ->
-      f._featureFlags = featureFlags
+      f._featureFlags = _.filter(featureFlags.split(','), (e) -> e.trim())
 
     ###
       Method: serialize
