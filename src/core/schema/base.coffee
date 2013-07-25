@@ -1,3 +1,5 @@
+_ = require("underscore")
+
 class Base
 
   @clone = () ->
@@ -58,6 +60,9 @@ class Base
     f.attach = (attachments) ->
       f._attach = attachments
 
+    f.featureFlags = (featureFlags) ->
+      f._featureFlags = featureFlags
+
     ###
       Method: serialize
 
@@ -84,6 +89,7 @@ class Base
           instance: f._instance_methods
         virtuals: f._virtuals
         attach: f._attach
+        featureFlags: f._featureFlags
       return o
 
     #create a node from a json object
